@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--   ssafy.member.selectOne -->
+<mapper namespace = "test.member">
+
+   
+    <select id="selec_sido" resultType="map">
+       select * from sidocode
+    </select>
+    
+    <select id="selec_gugun" resultType="map">
+       select * from guguncode where left(gugun_code , 2) =#{sc}
+    </select>
+    
+    
+    <select id="selec_catg" resultType="map">
+    	select * from catg 
+    </select>
+    
+    <select id="selec_siname" resultType="String">
+    	select sido_name from sidocode where sido_code =#{sido}
+    </select>
+    
+</mapper>
